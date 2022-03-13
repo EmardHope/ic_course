@@ -16,8 +16,8 @@ actor {
             follow: shared(Principal) -> async();
             follows: shared query() -> async[Principal];
             post: shared(Text) -> async();
-            posts: shared query() -> async [Message];
-            timeline: shared() -> async [Message];
+            posts: shared query(Int) -> async [Message];
+            timeline: shared(Int) -> async [Message];
         };
 
         //stable :升级后该变量不会重置
@@ -54,7 +54,7 @@ actor {
 
             for (id in Iter.fromList(followed)){
                 let canister : Microblog = actor(Principal.toText(id));
-                let msgs = await canister.posts();
+                let msgs = await canister.posts(since);
                 for(msg in Iter.fromArray(msgs)){
                     if(msg.time >= since){
                         all := List.push(msg,all)
