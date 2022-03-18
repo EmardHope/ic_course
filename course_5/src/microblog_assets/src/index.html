@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>microblog</title>
+    <base href="/" />
+    <link rel="icon" href="favicon.ico" />
+
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+
+    <link type="text/css" rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <header><h1>Microblog</h1></header>
+    <main>
+
+      <label for="message">What do you want to POST ?</label>
+      <textarea id="message"></textarea>
+      <p></p>
+      <label for="otp">输入密码（123456）</label>
+      <textarea id="otp"></textarea>
+      <p></p>
+      <button id="post">POST</button>
+      &nbsp; <span id="error"></span>
+      <h2>Followed Authors</h2>
+      <label id="loading">loading,please wait... click to read more</label>
+      <p>----------</p>
+      <section id="follows"></section>
+
+      <h2>Timeline</h2>
+      <p>----------</p>
+      <section id="timeline"></section>
+
+   
+      <section id="posts"></section>
+
+
+    </main>
+  </body>
+</html>
